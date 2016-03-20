@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ "$1" = "start" ];then
+    echo "... Start Ruyi server ...  "
+    cd ./skynet && ./skynet ../config
+    #cd ./skynet && nohup ./skynet ./config &
+elif [ "$1" = "stop" ];then
+    kill -9 `cat ./skynet/skynet.pid`
+    rm -rf ./skynet/skynet.pid
+    echo "... Stop Ruyi server ...  "
+elif [ "$1" = "state" ];then
+    ps -xwj | grep skynet
+else
+    echo "Useage: ./run start|stop"
+fi
+
+
+
