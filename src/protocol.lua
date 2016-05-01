@@ -1,8 +1,8 @@
 local sprotoparser = require "sprotoparser"
 
-local proto = {}
+local protocol = {}
 
-proto.c2s = sprotoparser.parse [[
+protocol.c2s = sprotoparser.parse [[
 .package {
 	type 0 : integer
 	session 1 : integer
@@ -29,12 +29,18 @@ set 3 {
 quit 4 {}
 ]]
 
-proto.s2c = sprotoparser.parse [[
+protocol.s2c = sprotoparser.parse [[
 .package {
 	type 0 : integer
 	session 1 : integer
 }
-heartbeat 1 {}
+
+heartbeat 1 {
+    request {
+        time 0 : string
+        price 1 : string
+    }
+}
 ]]
 
-return proto
+return protocol

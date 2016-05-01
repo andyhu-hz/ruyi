@@ -1,12 +1,14 @@
-package.cpath = "luaclib/?.so"
-package.path = "lualib/?.lua;examples/?.lua"
+package.path = "../skynet/lualib/?.lua;" .. package.path
+package.cpath = "../skynet/luaclib/?.so;" .. package.cpath
+
 
 if _VERSION ~= "Lua 5.3" then
 	error "Use lua 5.3"
 end
 
+
+local proto = require "protocol"
 local socket = require "clientsocket"
-local proto = require "proto"
 local sproto = require "sproto"
 
 local host = sproto.new(proto.s2c):host "package"
@@ -28,7 +30,6 @@ local function unpack_package(text)
 	if size < s+2 then
 		return nil, text
 	end
-
 	return text:sub(3,2+s), text:sub(3+s)
 end
 
@@ -60,7 +61,7 @@ end
 local last = ""
 
 local function print_request(name, args)
-	print("REQUEST", name)
+	print("REQUEST", name, args)
 	if args then
 		for k,v in pairs(args) do
 			print(k,v)
