@@ -4,18 +4,18 @@ local sprotoloader = require "sprotoloader"
 local max_client = 100000
 
 skynet.start(function()
-	print("Ruyi server start")
-	skynet.uniqueservice("protoloader")
-	local console = skynet.newservice("console")
-	skynet.newservice("debug_console",8000)
+    print("Ruyi server start")
+    skynet.uniqueservice("protoloader")
+    local console = skynet.newservice("console")
+    skynet.newservice("debug_console",8000)
     skynet.newservice("simpledb")
-	local watchdog = skynet.newservice("watchdog")
-	skynet.call(watchdog, "lua", "start", {
-		port = 5000,
-		maxclient = max_client,
-		nodelay = true,
-	})
-	print("Watchdog listen on port ", 5000)
+    local watchdog = skynet.newservice("watchdog")
+    skynet.call(watchdog, "lua", "start", {
+        port = 5000,
+        maxclient = max_client,
+        nodelay = true,
+    })
+    print("Watchdog listen on port ", 5000)
 
-	skynet.exit()
+    skynet.exit()
 end)
