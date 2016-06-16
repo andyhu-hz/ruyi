@@ -4,7 +4,7 @@ local sprotoloader = require "sprotoloader"
 local max_client = 100000
 
 skynet.start(function()
-    print("Ruyi server start")
+    print("Running ruyi server under skynet directory")
     skynet.uniqueservice("protoloader")
     local console = skynet.newservice("console")
     skynet.newservice("debug_console",8000)

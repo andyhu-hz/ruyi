@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if [ "$1" = "param1" ];then
+    echo "param1"    
+elif [ "$1" = "param2" ];then
+    echo "param2"    
+elif [ "$1" = "param3" ];then
+    echo "param3"    
+else
+    echo "Useage: $0"
+    export PATH=`pwd`/3rd/skynet/3rd/lua:$PATH
+    export PATH=`pwd`/3rd/lunit/lua/lunit:$PATH
+    export PATH=`pwd`/3rd/lunit/lua/lunitx:$PATH
+    export PATH=`pwd`/3rd/lunit/extra:$PATH
+    echo "PATH=$PATH"
+fi
+
+
+

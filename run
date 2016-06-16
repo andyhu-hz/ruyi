@@ -2,14 +2,18 @@
 
 if [ "$1" = "start" ];then
     echo "... Start Ruyi server ...  "
-    cd ./skynet && ./skynet ../config
-    #cd ./skynet && nohup ./skynet ./config &
+    cd ./3rd/skynet && ./skynet ../../config
+    #cd ./3rd/skynet && nohup ./3rd/skynet ../config &
 elif [ "$1" = "stop" ];then
-    kill -9 `cat ./skynet/skynet.pid`
-    rm -rf ./skynet/skynet.pid
+    kill -9 `cat ./3rd/skynet/skynet.pid`
+    rm -rf ./3rd/skynet/skynet.pid
     echo "... Stop Ruyi server ...  "
 elif [ "$1" = "state" ];then
     ps -xwj | grep skynet
+elif [ "$1" = "make" ];then
+    cd ./3rd/skynet && make macosx
+elif [ "$1" = "ut" ];then
+    cd ./unittest && lua example.lua
 else
     echo "Useage: ./run start|stop"
 fi

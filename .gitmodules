@@ -1,3 +1,9 @@
 [submodule "skynet"]
 	path = skynet
 	url = https://github.com/cloudwu/skynet.git
+[submodule "3rd/lunit"]
+	path = 3rd/lunit
+	url = git@github.com:sam-github/lunit.git
+[submodule "3rd/skynet"]
+	path = 3rd/skynet
+	url = git@github.com:cloudwu/skynet.git
