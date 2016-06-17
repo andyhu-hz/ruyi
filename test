@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "... run unittest ...  "
+lua ./unittest/*.lua
+
+

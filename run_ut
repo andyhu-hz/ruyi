@@ -1,6 +1,0 @@
-#!/bin/sh
-echo "... run unittest ...  "
-lua ../example.lua 
-#lunit.sh ../example.lua
-
-
