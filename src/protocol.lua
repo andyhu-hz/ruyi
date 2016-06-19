@@ -38,7 +38,6 @@ protocol.s2c = sprotoparser.parse [[
 heartbeat 1 {
     request {
         time 0 : string
-        price 1 : string
     }
 }
 ]]

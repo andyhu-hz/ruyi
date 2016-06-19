@@ -77,7 +77,7 @@ function CMD.start(conf)
     skynet.fork(function()
         while true do
             print "Send heartbeat package"
-            send_package(send_request("heartbeat", {time = "12345", price = "67890"}))
+            send_package(send_request("heartbeat", {time = os.date("server time: %x - %X")}))
             skynet.sleep(200)
         end
     end)

@@ -1,2 +1,2 @@
 # ruyi
-Ruyi JinGuBang is the magical staff wielded by Sun Wukong.
+ruyi is a server written to address the high concurrency and high load problem.

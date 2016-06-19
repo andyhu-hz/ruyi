@@ -1,6 +1,6 @@
-package.path = "../skynet/lualib/?.lua;" .. package.path
-package.cpath = "../skynet/luaclib/?.so;" .. package.cpath
-
+package.path = "../3rd/skynet/lualib/?.lua;" .. package.path
+package.cpath = "../3rd/skynet/luaclib/?.so;" .. package.cpath
+package.path = "../src/?.lua;" .. package.path
 
 if _VERSION ~= "Lua 5.3" then
     error "Use lua 5.3"
@@ -61,7 +61,7 @@ end
 local last = ""
 
 local function print_request(name, args)
-    print("REQUEST", name, args)
+    --print("REQUEST", name, args)
     if args then
         for k,v in pairs(args) do
             print(k,v)
