@@ -1,7 +1,5 @@
-package.path = '../3rd/lunit/lua/?.lua;' .. package.path
-
 lunit = require "lunitx"
-_ENV = lunit.module('heartbeat','seeall')
+_ENV = lunit.module('example','seeall')
 
 local foobar = nil
 

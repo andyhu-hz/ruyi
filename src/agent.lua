@@ -24,7 +24,8 @@ function REQUEST:set()
 end
 
 function REQUEST:handshake()
-    return { msg = "Welcome to Ruyi, I will send heartbeat every 5 sec." }
+    print("agent responese the client request handshake")
+    return { msg = "server handshake responese" }
 end
 
 function REQUEST:quit()
@@ -77,7 +78,7 @@ function CMD.start(conf)
     skynet.fork(function()
         while true do
             print "Send heartbeat package"
-            send_package(send_request("heartbeat", {time = os.date("server time: %x - %X")}))
+            send_package(send_request("heartbeat", {time = os.date("heartbeat: %x - %X")}))
             skynet.sleep(200)
         end
     end)
