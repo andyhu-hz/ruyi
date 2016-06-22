@@ -9,6 +9,6 @@ local proto = require "protocol"
 skynet.start(function()
     sprotoloader.save(proto.c2s, 1)
     sprotoloader.save(proto.s2c, 2)
-    print("package.path = " .. package.path)
+    --print("package.path = " .. package.path)
     -- don't call skynet.exit() , because sproto.core may unload and the global slot become invalid
 end)

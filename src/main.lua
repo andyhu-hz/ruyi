@@ -15,7 +15,7 @@ skynet.start(function()
         maxclient = max_client,
         nodelay = true,
     })
-    print("Watchdog listen on port ", 5000)
 
+    local simpleweb = skynet.newservice("simpleweb")
     skynet.exit()
 end)
