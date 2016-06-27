@@ -9,6 +9,8 @@ skynet.start(function()
     local console = skynet.newservice("console")
     skynet.newservice("debug_console",8000)
     skynet.newservice("simpledb")
+
+    --handshake (request/respone)
     local watchdog = skynet.newservice("watchdog")
     skynet.call(watchdog, "lua", "start", {
         port = 5000,
@@ -16,6 +18,7 @@ skynet.start(function()
         nodelay = true,
     })
 
+    --http
     local simpleweb = skynet.newservice("simpleweb")
     skynet.exit()
 end)
