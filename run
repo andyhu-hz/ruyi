@@ -10,8 +10,6 @@ elif [ "$1" = "stop" ];then
     echo "... Stop Ruyi server ...  "
 elif [ "$1" = "state" ];then
     ps -xwj | grep skynet
-elif [ "$1" = "make" ];then
-    cd ./3rd/skynet && make macosx
 else
     echo "Useage: ./run start|stop"
 fi

@@ -1,7 +1,8 @@
 #!/bin/sh
-LUA_PATH='pwd'/3rd/skynet/3rd/lua
-export PATH=`pwd`/3rd/skynet/3rd/lua:$PATH
+CUR_PATH=`pwd`
+LUA_PATH=$CUR_PATH/3rd/skynet/3rd/lua
+export PATH=$LUA_PATH:$PATH
 #luarocks install ./3rd/lunit/lunitx-0.6-0.rockspec
-cp -R /usr/local/share/lua/5.2 /usr/local/share/lua/5.3
+#cp -R /usr/local/share/lua/5.2 /usr/local/share/lua/5.3
 
 
