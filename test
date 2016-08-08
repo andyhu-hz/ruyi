@@ -1,4 +1,5 @@
 #!/bin/sh
+. ./setting path
 echo "... run unittest ...  "
 cd ./unittest && lua ./*.lua
 
