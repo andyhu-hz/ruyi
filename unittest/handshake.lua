@@ -80,7 +80,7 @@ local function send_request(name, args)
     session = session + 1
     local str = request(name, args, session)
     send_package(fd, str)
-    print("Request: "..name..", session="..session)
+    --print("Request: "..name..", session="..session)
 end
 
 function setup()

@@ -5,7 +5,7 @@ package.path = "../src/?.lua;" .. package.path
 
 lunit = require "lunitx"
 ls = require "lsocket"
-_ENV = lunit.module('handshake request','seeall')
+_ENV = lunit.module('httpclient request','seeall')
 
 local proto = require "protocol"
 local socket = require "clientsocket"
