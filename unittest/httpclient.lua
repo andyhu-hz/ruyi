@@ -55,8 +55,6 @@ function test1()
         sent = sent + sock:send(string.sub(rq, sent, -1))
     until sent == #rq
 
-    --assert_equal("Hello", foobar)
-
     reply = ""
     repeat
         ls.select({sock})
@@ -68,6 +66,6 @@ function test1()
         end
     until not str
 
-    print(reply)
-    assert_equal(0, 0)
+    --print(reply)
+    assert_equal(140, #reply)
 end
